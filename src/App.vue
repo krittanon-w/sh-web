@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <nprogress-container></nprogress-container>
     <img src="./assets/logo.png">
     <el-button @click="visible = true">Button</el-button>
     <el-dialog v-model="visible" title="Hello world">
@@ -10,20 +11,28 @@
 </template>
 
 <script>
-var test = 'test'
+  import NprogressContainer from '@/components/Nprogress'
+
   export default {
     name: 'app',
-  
-    data: function() {
+
+    components: {
+      NprogressContainer
+    },
+
+    data() {
       return {
-        visible: false,
-        test
+        visible: false
       }
+    },
+
+    created() {
+
     }
   }
 </script>
 
-<style>
+<style lang="css">
   #app {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;

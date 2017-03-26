@@ -2,9 +2,16 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// jquery for support semantic-ui
+import jquery from 'jquery'
+window.jQuery = jquery
+window.$ = jquery
 
-// setup element-ui env
-// full import components
+// semantic-ui-css
+require('semantic-ui-css/semantic.min.js')
+import 'semantic-ui-css/semantic.min.css'
+
+// element-ui
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 Vue.use(ElementUI)

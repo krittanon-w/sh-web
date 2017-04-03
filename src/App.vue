@@ -1,23 +1,22 @@
 <template>
-  <div id="app">
+  <div id="app" class="pusher x-full_height x-c_red" _mouseover="closeSidebar">
     <nprogress-container></nprogress-container>
-    <img src="./assets/logo.png">
-    <el-button @click="visible = true">Button</el-button>
-    <el-dialog v-model="visible" title="Hello world">
-      <p>Try Element</p>
-    </el-dialog>
+    <top-sidebar></top-sidebar>
+    <top-menu></top-menu>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
   import NprogressContainer from '@/components/Nprogress'
+  import TopMenu from '@/components/TopMenu'
 
   export default {
     name: 'app',
 
     components: {
-      NprogressContainer
+      NprogressContainer,
+      TopMenu
     },
 
     data() {
@@ -32,13 +31,7 @@
   }
 </script>
 
-<style lang="css">
-  #app {
-    font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
-    color: #2c3e50;
-    margin-top: 60px;
+<style lang="scss">
+  #app{
   }
 </style>

@@ -1,15 +1,28 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Dashboard from '@/components/Dashboard'
+import DashHome from '@/components/DashHome'
 
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
-    }
+      path: '/user/dashboard',
+      name: 'Dashboard',
+      component: Dashboard,
+      meta:{requireAuth: true},
+      children: [
+        {
+          path: '/',
+          component: DashHome
+        },
+      ]
+    },
+    {
+      path: '*',
+      redirect: '/user/dashboard'
+    },
   ]
 })

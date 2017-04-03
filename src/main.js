@@ -27,6 +27,13 @@ const options = {
 const nprogress = new NProgress(options)
 Vue.use(NProgress)
 
+// global style and util
+import '@/assets/global_style.scss'
+
+// inject topsidebar plugin
+import TopSidebar from '@/components/TopSidebar'
+Vue.use(TopSidebar)
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

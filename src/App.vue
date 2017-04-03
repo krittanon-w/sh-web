@@ -1,23 +1,37 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
+  <div id="app" class="pusher x-full_height x-c_red" _mouseover="closeSidebar">
+    <nprogress-container></nprogress-container>
+    <top-sidebar></top-sidebar>
+    <top-menu></top-menu>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
+  import NprogressContainer from '@/components/Nprogress'
+  import TopMenu from '@/components/TopMenu'
+
+  export default {
+    name: 'app',
+
+    components: {
+      NprogressContainer,
+      TopMenu
+    },
+
+    data() {
+      return {
+        visible: false
+      }
+    },
+
+    created() {
+
+    }
+  }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+  #app{
+  }
 </style>
